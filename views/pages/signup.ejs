@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+  <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+  <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.0-beta.1/angular-sanitize.js"></script>
+
+  <body style="padding-top: 100px;">
+  <header>
+      <nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="background-color:#3B5998">
+        <div class="container">
+          <div class="navbar-header navbar-nav col-md-12">
+            <h3 style="margin-right:10px; color:white">MyFacebook</h3>
+          </div>
+        </div>
+      </nav>
+    </header> 
+
+  
+    <div class="container">
+    <form method="post" action="/signup" validate>
+    <table>
+        <tr>
+            <td colspan="2">
+                <h3>Let's get started. It's Free</h3> <br>
+                Please enter following details
+            </td>
+        </tr>
+        <tr> 
+            <td class="col-md-3">First Name</td>
+            <td> <input type="text" name="firstName" required style="margin-bottom:10px"/> </td>
+        </tr>
+        <tr>
+            <td class="col-md-3">Last Name</td>
+            <td><input type="text" name="lastName" required style="margin-bottom:10px"/> </td>
+        </tr>
+        <tr>
+            <td class="col-md-3">Sex </td>
+            <td><input type="radio" name="sex" value="m" checked style="margin-bottom:10px"/> Male
+        	   <input type="radio" name="sex" value="f"/> Female 
+            </td>
+        </tr>
+        <tr>
+            <td class="col-md-3">Email Id</td>
+            <td><input type="email" name="email" required style="margin-bottom:10px"/> </td>
+        </tr>
+        <tr>
+            <td class="col-md-3">Password</td>
+            <td> <input type="password" name="password" required style="margin-bottom:10px"/> </td> 
+        </tr>
+        <tr>
+            <td><input class="btn btn-default btn-xs pull-right" type="submit" value="Create" style="margin-right:10px"/> </td>
+            <td><input class="btn btn-default btn-xs" type="reset" value="Clear" /> </td>
+        </tr>
+        <tr>
+            <td colspan="2" ng-show="message">
+                <% if (error==true) {%>
+                Email Id already exists. Signup using another email Id
+                <% } %>
+            </td>
+        </tr>
+    </table>
+    </form> 
+  </body>
+</html>
