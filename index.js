@@ -12,6 +12,7 @@ var config      = require(__dirname +'/config/mongoConnect');
 
 
 app.set('port', (process.env.PORT || 5000));
+app.use(express.static(__dirname + '/public'));
 mongoose.connect(config.database);
 require('./config/passport')(passport);
 
@@ -19,7 +20,7 @@ app.use(morgan('dev')); // log every request to the console
 app.use(cookieParser()); // read cookies (needed for auth)
 app.use(bodyParser.json()); // get information from html forms
 app.use(bodyParser.urlencoded({ extended: true }));
-
+app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 
 app.use(session({ secret: 'cmpe272cloudphotorepository' })); // session secret
