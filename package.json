@@ -1,22 +1,31 @@
 {
-  "name": "node-js-getting-started",
-  "version": "0.1.5",
-  "description": "A sample Node.js app using Express 4",
+  "name": "cloud-photo-repository",
+  "version": "0.0.1",
+  "description": "A central repo for storing all your photos and finding ir made easy",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
   },
   "dependencies": {
+    "bcrypt-nodejs": "latest",
     "body-parser": "^1.15.0",
+    "connect-flash": "~0.1.1",
+    "cookie-parser": "~1.0.0",
+    "ejs": "^2.4.1",
     "express": "4.13.3",
-    "mongoose": "^4.4.12"
+    "express-session": "~1.0.0",
+    "method-override": "~1.0.0",
+    "mongoose": "^4.4.12",
+    "morgan": "~1.0.0",
+    "passport": "~0.1.17",
+    "passport-local": "~0.1.6"
   },
   "engines": {
     "node": "0.12.7"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/heroku/node-js-getting-started"
+    "url": "https://github.com/Imran-syed/272-Cloud-Photo-Repository"
   },
   "keywords": [
     "node",
