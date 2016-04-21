@@ -159,6 +159,39 @@ body {
 	max-width: 100%;
 }
 
+.signupcontent{
+	height: calc(100vh - 72px);
+	background-image:url(../../images/photo_signup2.jpeg);
+	background-size:100%; 
+	background-repeat: no-repeat;
+	display: block;
+	max-width: 100%;
+	color:#FFF;
+}
+
+.help-block{
+	color:#FFF;
+}
+
+.logincontent{
+	height: calc(100vh - 72px);
+	background-image:url(../../images/photo_login.jpg);
+	background-size:100%; 
+	background-repeat: no-repeat;
+	display: block;
+	max-width: 100%;
+	color:#FFF;	
+}
+
+.window{
+	padding:5px;
+	border-radius: 2px;
+    border: 2px solid rgba(0,0,0,.3);
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+	
+}
+
 section {
     background-color: #F0F0F0;
     overflow: hidden;
