@@ -20,18 +20,18 @@ module.exports = function(app, passport) {
         res.redirect('/');
     });
 	
-	//USER =================================
-	app.get('/user', function (req, res) {
+	//USER ================================= Commenting because now the user will be redirected to the home page
+	/*app.get('/user', function (req, res) {
         res.render('user.ejs');
-    });
+    });*/
 
     //USER HOME =============================
-    app.get('/userhome', function (req, res) {
+    app.get('/userhome', isLoggedIn, function (req, res) {
         res.render('userhome.ejs');
     });
 
     //USER PHOTOS============================
-    app.get('/photos', function (req, res) {
+    app.get('/photos',  isLoggedIn, function (req, res) {
         res.render('photos.ejs');
     });
 
@@ -47,7 +47,7 @@ module.exports = function(app, passport) {
 
     // process the login form
     app.post('/login', passport.authenticate('local-login', {
-        successRedirect: '/user',
+        successRedirect: '/userhome',
         failureRedirect: '/login',
         failureFlash: true
     }));
@@ -60,7 +60,7 @@ module.exports = function(app, passport) {
 
     // process the signup form
     app.post('/signup', passport.authenticate('local-signup', {
-        successRedirect: '/user',
+        successRedirect: '/userhome',
         failureRedirect: '/signup',
         failureFlash: true
     }));
