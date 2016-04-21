@@ -162,7 +162,7 @@ body {
 .signupcontent{
 	height: calc(100vh - 72px);
 	background-image:url(../../images/photo_signup2.jpeg);
-	background-size:100%; 
+	background-size:cover;
 	background-repeat: no-repeat;
 	display: block;
 	max-width: 100%;
@@ -176,7 +176,7 @@ body {
 .logincontent{
 	height: calc(100vh - 72px);
 	background-image:url(../../images/photo_login.jpg);
-	background-size:100%; 
+	background-size:cover;
 	background-repeat: no-repeat;
 	display: block;
 	max-width: 100%;
@@ -196,4 +196,24 @@ section {
     background-color: #F0F0F0;
     overflow: hidden;
     position: relative;
+}
+
+.user-home{
+    height: calc(100vh - 72px);
+    background-image:url(../../images/photo_userhome.jpg);
+    background-size:cover;
+    background-repeat: no-repeat;
+    display: flex;
+    max-width: 100%;
+    color:#FFF;
+    text-align: center;
+    align-items: center;
+}
+
+p.align{
+    font-weight: bold;
+    margin-left: auto;
+    margin-right:auto;
+    color:#FFF;
+    font-size:185%
 }
