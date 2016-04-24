@@ -13,8 +13,10 @@
 	
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+      <link rel="stylesheet" href="/includes/css/form-elements.css">
+      <link rel="stylesheet" href="/includes/css/login_style.css">
 
-    <!-- Bootstrap core CSS -->
+      <!-- Bootstrap core CSS -->
     <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
@@ -48,7 +50,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Logo</a>
+          <a class="navbar-brand" href="/">Cloud Photo Repo</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <form class="navbar-form navbar-right">
@@ -64,7 +66,68 @@
 		</div><!--/.navbar-collapse -->	
       </div>
     </nav>
-<div class="container">
+
+    <!-- Top content -->
+    <div class="top-content">
+        <% if (message.length > 0) { %>
+        <div class="alert alert-danger"><%= message %></div>
+        <% } %>
+        <div class="inner-bg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-8 col-sm-offset-2 text">
+                        <h1><span class="fa fa-sign-in"></span> SIGN UP</h1>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6 phone">
+                        <img src="/images/iphone.png" alt="">
+                    </div>
+                    <div class="col-sm-5 form-box">
+                        <div class="form-top">
+                            <div class="form-top-left">
+                                <h2>Sign Up Now!</h2>
+                                <p>Fill in the form below to get instant access</p>
+                            </div>
+                            <div class="form-top-right">
+                                <i class="fa fa-pencil"></i>
+                            </div>
+                        </div>
+                        <div class="form-bottom">
+                            <form action="/signup" data-toggle="validator" method="post" id="SignUpForm">
+                                <div class="form-group">
+                                    <label for="email" class="control-label">EMAIL ID</label>
+                                    <input type="email" id="email" class="form-control" name="email"  placeholder = "newuser@user.com" autocomplete="email" autofocus required>
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="pwd1" class="control-label">PASSWORD</label>
+                                    <input type="password" id="pwd1" data-minlength="6" class="form-control" placeholder="Password" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$" name="password" required>
+                                    <div class="help-block">Password must contain a uppercase,lowercase and a number</div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="pwd2" class="control-label">CONFIRM PASSWORD</label>
+                                    <input type="password" id="pwd2" class="form-control" name="password2" data-match="#pwd1" data-match-error="Whoops, these don't match" placeholder="Confirm" required>
+                                    <div class="help-block with-errors"></div>
+                                </div>
+
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-lg">SIGNUP</button>
+                                </div>
+                            </form>
+                        </div>
+                        <p>Already have an account? <a href="/login">Login</a></p>
+                        <p>Or go <a href="/">home</a>.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <!--<div class="container">
 	<div class="signupcontent">
 <div class="col-sm-6 col-sm-offset-3">
 
@@ -105,7 +168,7 @@
 	</h3>
 </div>
 </div>
-</div>
+</div>-->
 	<script>
 	var password = $("#pwd1").val();
   , confirm_password = $("#pwd2").val();
