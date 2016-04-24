@@ -35,11 +35,6 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-	
-	<!-- Include Modernizr in the head, before any other Javascript -->
-	<script src="/includes/js/modernizr-2.6.2.min.js"></script>
-	<!-- If no online access, fallback to our hardcoded version of jQuery -->
-	<script>window.jQuery || document.write('<script src="/includes/js/jquery-1.8.2.min.js"><\/script>')</script>
 
   </head>
 
@@ -111,22 +106,12 @@
 </div>
 </div>
 </div>
-<!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <!-- First try for the online version of jQuery-->
-	<script src="http://code.jquery.com/jquery.js"></script>
-	
-	
-	
-	<!-- Bootstrap JS -->
-	<script src="/bootstrap/js/bootstrap.min.js"></script>
 	<script>
-	var password = document.getElementById("pwd1")
-  , confirm_password = document.getElementById("pwd2");
+	var password = $("#pwd1").val();
+  , confirm_password = $("#pwd2").val();
 
 function validatePassword(){
-  if(password.value != confirm_password.value) {
+  if(password != confirm_password) {
     confirm_password.setCustomValidity("Passwords Don't Match");
   } else {
     confirm_password.setCustomValidity('');
@@ -135,8 +120,19 @@ function validatePassword(){
 
 password.onchange = validatePassword;
 confirm_password.onkeyup = validatePassword;
-	
-	
 	</script>
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <!-- First try for the online version of jQuery-->
+    <script src="http://code.jquery.com/jquery.js"></script>
+
+    <!-- If no online access, fallback to our hardcoded version of jQuery -->
+    <script>window.jQuery || document.write('<script src="/includes/js/jquery-1.8.2.min.js"><\/script>')</script>
+
+    <!-- Bootstrap JS -->
+    <script src="/bootstrap/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
 </body>
 </html>

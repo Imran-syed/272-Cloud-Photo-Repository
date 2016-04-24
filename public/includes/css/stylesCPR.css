@@ -89,10 +89,6 @@ body {
     border-color: #101010;
 }
 
-.container-fluid>.navbar-collapse, .container-fluid>.navbar-header, .container>.navbar-collapse, .container>.navbar-header {
-    margin-right: -15px;
-    margin-left: -15px;
-}
 .navbar-fixed-bottom .navbar-collapse, .navbar-fixed-top .navbar-collapse {
     max-height: 340px;
 }
@@ -151,16 +147,37 @@ body {
 .center-image{
 	height: calc(100vh - 72px);
     text-align: center;
-	background-image:url(../../images/photo_home2.jpg),url(../../images/photo_home.jpg),url(../../images/photo_home3.jpg),url(../../images/photo_home4.jpg);
-	background-size:50%; 
-	background-repeat: no-repeat, no-repeat,no-repeat,no-repeat;
-	background-position: top right, top left,bottom right,bottom left;
+	//background-image:url(../../images/photo_home2.jpg),url(../../images/photo_home.jpg),url(../../images/photo_home3.jpg),url(../../images/photo_home4.jpg);
+
+    //background-image:url(../../images/Collage.jpg);
+    background:
+            linear-gradient(
+                    rgba(0, 0, 0, 0.2),
+                    rgba(0, 0, 0, 0.2)
+            ),
+            url(../../images/Collage.jpg);
+	background-size:cover;
+	background-repeat: no-repeat;
 	display: block;
 	max-width: 100%;
 }
 
+.center-image h1 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 900;
+    color: white;
+    text-transform: uppercase;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 5rem;
+    transform: translate(-50%, -50%);
+}
+
+
 .signupcontent{
-	height: calc(100vh - 72px);
+	height: calc(100vh);
 	background-image:url(../../images/photo_signup2.jpeg);
 	background-size:cover;
 	background-repeat: no-repeat;
@@ -174,7 +191,7 @@ body {
 }
 
 .logincontent{
-	height: calc(100vh - 72px);
+	height: calc(100vh);
 	background-image:url(../../images/photo_login.jpg);
 	background-size:cover;
 	background-repeat: no-repeat;
@@ -199,7 +216,7 @@ section {
 }
 
 .user-home{
-    height: calc(100vh - 72px);
+    height: calc(100vh);
     background-image:url(../../images/photo_userhome.jpg);
     background-size:cover;
     background-repeat: no-repeat;
@@ -215,5 +232,28 @@ p.align{
     margin-left: auto;
     margin-right:auto;
     color:#FFF;
-    font-size:185%
+    font-size:185%;
+    padding:25px;
 }
+
+/*.gallery{
+    width: 50%;
+    margin: 0;
+    padding: 0;
+    float: left;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    background: #fff;
+}
+
+.gallery img{
+    display: block;
+    position: relative;
+    -webkit-transition: all 0.3s ease-out 0.1s;
+    -moz-transition: all 0.3s ease-out 0.1s;
+    -o-transition: all 0.3s ease-out 0.1s;
+    -ms-transition: all 0.3s ease-out 0.1s;
+    transition: all 0.3s ease-out 0.1s;
+    width: 100%;
+}*/
