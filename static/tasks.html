@@ -12,33 +12,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body onload="" ng-controller="taskListCtrl">
-<nav class="navbar navbar-inverse navbar-fixed-top">
+<div class="navbar navbar-default navbar-fixed-top">
     <div class="container">
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only">Toggle navigation</span>
+            <button type="button" class="navbar-toggle" data-toggle="collapse"
+                    data-target=".navbar-fixed-top .navbar-collapse">
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Logo</a>
+            <a class="navbar-brand" href="/">Home</a>
         </div>
-        <div id="navbar" class="navbar-collapse collapse">
-            <form class="navbar-form navbar-right">
-                <!-- <div class="form-group">
-                  <input type="text" placeholder="Email" class="form-control">
-                </div>
-                <div class="form-group">
-                  <input type="password" placeholder="Password" class="form-control">
-                </div> -->
-                <a type="submit" class="btn btn-success" href="/userhome">HOME</a>
-                <a type="submit" class="btn btn-success" href="/photos">PHOTOS</a>
-                <a type="submit" class="btn btn-success" href="/profile">PROFILE</a>
-                <a href="/logout" class="btn btn-danger">Logout</a>
-            </form>
-        </div><!--/.navbar-collapse -->
+
     </div>
-</nav>
+</div>
 <div class="container">
     <div class="clearfix">
 
@@ -55,16 +42,14 @@
 
         <div class="panel panel-default">
             <div class="panel-heading">
-                <h3 class="panel-title">Demo Notes</h3>
+                <h3 class="panel-title">Cloud Photo Repository Demo Notes</h3>
             </div>
             <div class="panel-body">
                 <ul>
-                    <li>There is a browser compatibility check to ensure HTML5 functionality is supported.
-                    </li>
                     <li>The maximum file size for uploads in this demo is <strong>5 MB</strong> with a maximum of five
                         images per request.
                     </li>
-                    <li>Only image files (<strong>PNG</strong>) are allowed in this demo
+                    <li>Only image files (<strong>PNG, JPG</strong>) are allowed in this demo
                     </li>
                     <li>Uploaded files will be compressed during upload and attached to new task
                     </li>

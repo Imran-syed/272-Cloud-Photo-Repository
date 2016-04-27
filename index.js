@@ -7,16 +7,20 @@ var flash    = require('connect-flash');
 var morgan       = require('morgan');
 var cookieParser = require('cookie-parser');
 var session      = require('express-session');
-//var multer = require('multer');
+multer = require('multer');
 
+deviceName = 'none';
+var mongodbURI  = 'mongodb://52.200.26.204:27017/cmpe272';
+console.log(mongodbURI);
 var config      = require(__dirname +'/config/mongoConnect');
-
+app.use(express.static(__dirname + '/static'));
 
 app.set('port', (process.env.PORT || 5000));
 app.use(express.static(__dirname + '/public'));
-mongoose.connect(config.database);
-require('./config/passport')(passport);
 
+mongoose.connect(mongodbURI);
+//mongoose.connect(config.database);
+require('./config/passport')(passport);
 
 // upload photo
    /* var storage =   multer.diskStorage({
