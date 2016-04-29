@@ -40,8 +40,9 @@ module.exports = function(app, passport) {
 
         query.exec(function (err, doc) {
             if (err) return next(err);
-
+            var temp =deviceName;
             res.render('userhome.ejs', {
+                deviceId: temp,
                 clients: doc.local.devices,
                  });
             console.log(doc.local.devices);
@@ -219,6 +220,7 @@ module.exports = function(app, passport) {
                     }
 
                     files.forEach(function (tmpFile) {
+                        console.log(tmpFile.contents.length);
                         minifiedBaseImages.push(new Buffer(tmpFile.contents).toString('base64'));
                         console.log('Optmization on file is complete and appended to list');
                     });
@@ -239,7 +241,7 @@ module.exports = function(app, passport) {
 
                     query.exec(function (err, doc) {
                         if (err) return next(err);
-                        console.log(doc);
+                        //console.log(doc);
                         if(doc==null)
                         {
                             console.log(req.user.local.email);
@@ -258,6 +260,7 @@ module.exports = function(app, passport) {
                             task.save(function (err) {
                                 if (!err) {
                                     console.log("Image compressed and task updated");
+                                    deviceName = "Choose Device";
                                 } else {
                                     console.log(err);
                                     return next(err);
@@ -275,6 +278,7 @@ module.exports = function(app, passport) {
                             doc.save(function (err) {
                                 if (!err) {
                                     console.log("New Image pushed ");
+                                    deviceName = "Choose Device";
                                 } else {
                                     console.log(err);
                                     return next(err);

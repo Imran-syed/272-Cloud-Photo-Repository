@@ -11,9 +11,11 @@
 
     <title>Cloud Photo Repository</title>
 
-
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+
+    <!-- Bootstrap core CSS -->
+    <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <link href="/includes/css/ie10-viewport.css" rel="stylesheet">
@@ -37,9 +39,9 @@
     <!-- Include Modernizr in the head, before any other Javascript -->
     <script src="/includes/js/modernizr-2.6.2.min.js"></script>
     <!-- If no online access, fallback to our hardcoded version of jQuery -->
-    <!--  <script>window.jQuery || document.write('<script src="/includes/js/jquery-1.8.2.min.js"><\/script>')</script>-->
+    <script>window.jQuery || document.write('<script src="/includes/js/jquery-1.8.2.min.js"><\/script>')</script>
 
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <!--  <link rel="stylesheet" href="/css/bootstrap.min.css">
     <!-- CSS to style the file input field as button and adjust the Bootstrap progress bars -->
     <link rel="stylesheet" href="/css/jquery.fileupload.css">
     <!-- Generic page styles -->
@@ -106,10 +108,10 @@
                 Your browser may not support the functionality on this page.
             </div>
 
-            <div class = "col-xs-4">
+            <div class = "col-xs-5">
                 <form action="/api/setdevice" method="post" >
                 <select class="form-control" id="clientName" name="deviceSelect" onchange="this.form.submit()" required >
-                    <option selected disabled>Choose here</option>
+                    <option selected disabled><%=deviceId%></option>
                     <% clients.forEach(function (clients) { %>
                     <option > <%= clients %>  <% }) %> </option>
                 </select>
@@ -134,7 +136,7 @@
             <div id="success" class="hidden">
                 <div class="alert alert-success">
                     <a href="#" class="close" data-dismiss="alert">&times;</a>
-                    <strong>Success!</strong> All files have been uploaded and optimised successfully
+                    <strong>Success!</strong> All files have been uploaded successfully
                 </div>
             </div>
 
@@ -155,6 +157,20 @@
 </div>
 
 </div>
+
+<!-- Bootstrap core JavaScript
+     ================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<!-- First try for the online version of jQuery-->
+<script src="http://code.jquery.com/jquery.js"></script>
+
+<!-- If no online access, fallback to our hardcoded version of jQuery -->
+<script>window.jQuery || document.write('<script src="/includes/js/jquery-1.8.2.min.js"><\/script>')</script>
+
+<!-- Bootstrap JS -->
+<script src="/bootstrap/js/bootstrap.min.js"></script>
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
 
 <!-- Bootstrap JS is not required, but included for the responsive demo navigation -->
 <script src="/js/jquery.min.js"></script>

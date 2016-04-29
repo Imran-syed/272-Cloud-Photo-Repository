@@ -9,7 +9,7 @@ var cookieParser = require('cookie-parser');
 var session      = require('express-session');
 multer = require('multer');
 
-deviceName = 'none';
+deviceName = 'Choose Device';
 var mongodbURI  = 'mongodb://52.200.26.204:27017/cmpe272';
 console.log(mongodbURI);
 var config      = require(__dirname +'/config/mongoConnect');
