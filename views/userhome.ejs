@@ -16,11 +16,7 @@
 
     <!-- Bootstrap core CSS -->
     <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <link href="/includes/css/ie10-viewport.css" rel="stylesheet">
-
-    
+       
     <!--CPR Custom styles for this page -->
     <link href="/includes/css/stylesCPR.css" rel="stylesheet">
 
@@ -41,7 +37,12 @@
     <link rel="stylesheet" href="/css/jquery.fileupload.css">
     <!-- Generic page styles -->
     <link rel="stylesheet" href="/css/style.css">
-
+    <style>
+    .form-box{
+        border: 2px solid grey;
+        padding:5px;
+    }
+    </style>    
 </head>
 <body>
 <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -80,7 +81,7 @@
          <span id = "status"></span>
      </form>-->
 <div class="well">     
-    <div class = "row">
+    <div class = "row demark">
         <div class="col-xs-6 col-xs-offset-3 col-sm-6 col-sm-offset-3 form-box">
                 <form action="/api/register" method="post">
                     <div class="form-group">
@@ -93,7 +94,7 @@
         </div>
      </div>   
 
-    <div class = "row">
+    <div class = "row demark">
         <div class="col-xs-6 col-xs-offset-3 col-sm-6 col-sm-offset-3 form-box">
             <div id="notcompatible" class="hidden">
                 Your browser may not support the functionality on this page.
@@ -103,16 +104,16 @@
                 <label for="deviceName">Choose your device</label>
                 <form action="/api/setdevice" method="post" >
                 <select class="form-control" id="clientName" name="deviceSelect" onchange="this.form.submit()" required >
-                    <option selected disabled><%=deviceId%></option>
+                    <option selected disabled value=""><%=deviceId%></option>
                     <% clients.forEach(function (clients) { %>
-                    <option > <%= clients %>  <% }) %> </option>
+                    <option value="<%= clients %>"> <%= clients %>  <% }) %> </option>
                 </select>
                 </form>
             </div>
         </div>
     </div>     
 
-    <div class = "row">
+    <div class = "row demark">
         <div class="col-xs-6 col-xs-offset-3 col-sm-6 col-sm-offset-3 form-box">
             <!-- The fileinput-button span is used to style the file input field as button -->
             <form id="uploadForm" name="uploadForm" enctype="multipart/form-data" action="/api/upload" method="post">
@@ -138,7 +139,7 @@
 
             <!-- The container for the uploaded files -->
             <div id="files" class="files"></div>
-            <div id="dragandrophandler">Drag & Drop Files Here</div>
+            
         </div>
         </div>
 
@@ -166,8 +167,6 @@
 
 <!-- Bootstrap JS -->
 <script src="/bootstrap/js/bootstrap.min.js"></script>
-<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-<script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
 
 <!-- Bootstrap JS is not required, but included for the responsive demo navigation -->
 <script src="/js/jquery.min.js"></script>
