@@ -84,7 +84,7 @@
      </form>-->
 <div class="well">     
     <div class = "row demark">
-        <div class="col-xs-6 col-xs-offset-3 col-sm-6 col-sm-offset-3 form-box">
+        <div class="col-sm-6 col-sm-offset-3 form-box">
                 <form action="/api/register" method="post">
                     <div class="form-group">
                         <label for="deviceName">Please Register your device</label>
@@ -103,12 +103,12 @@
      </div>   
 
     <div class = "row demark">
-        <div class="col-xs-6 col-xs-offset-3 col-sm-6 col-sm-offset-3 form-box">
+        <div class="col-sm-6 col-sm-offset-3 form-box">
             <div id="notcompatible" class="hidden">
                 Your browser may not support the functionality on this page.
             </div>
 
-            <div class = "col-sm-7">
+            <div>
                 <label for="deviceName">Choose your device</label>
                 <form action="/api/setdevice" method="post" >
                 <select class="form-control" id="clientName" name="deviceSelect" onchange="this.form.submit()" required >
@@ -122,7 +122,7 @@
     </div>     
 
     <div class = "row demark">
-        <div class="col-xs-6 col-xs-offset-3 col-sm-6 col-sm-offset-3 form-box">
+        <div class="col-sm-6 col-sm-offset-3 form-box">
             <!-- The fileinput-button span is used to style the file input field as button -->
             <form id="uploadForm" name="uploadForm" enctype="multipart/form-data" action="/api/upload" method="post">
                 <!-- The file input field used as target for the file upload widget -->
@@ -131,7 +131,7 @@
                 <div class="form-group">
                     <span id="selectbutton" class="btn btn-success fileinput-button">
                      <i class="glyphicon glyphicon-plus"></i>
-                    <span>Select files...</span>
+                    <span>Select photos to upload...</span>
                     <input id="userFileInput" type="file" name="photos" multiple="multiple" multiple>
                         </span>
                 </div>
