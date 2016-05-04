@@ -91,6 +91,12 @@
                     </div>
                     <button type="submit" class="btn btn-warning btn-lg">Register</button>
                 </form>
+                <div id="registersuccess" class="hidden">
+                <div class="alert alert-success">
+                    <a href="#" class="close" data-dismiss="alert">&times;</a>
+                    <strong>Success!</strong> Your device was registered successfully!!
+                </div>
+            </div>
         </div>
      </div>   
 
@@ -106,7 +112,7 @@
                 <select class="form-control" id="clientName" name="deviceSelect" onchange="this.form.submit()" required >
                     <option selected disabled value=""><%=deviceId%></option>
                     <% clients.forEach(function (clients) { %>
-                    <option value="<%= clients %>"> <%= clients %>  <% }) %> </option>
+                    <option value ="<%= clients %>"> <%= clients %>  <% }) %> </option>
                 </select>
                 </form>
             </div>
@@ -121,7 +127,7 @@
 
 
                 <div class="form-group">
-                    <span class="btn btn-success fileinput-button">
+                    <span id="selectbutton" class="btn btn-success fileinput-button">
                      <i class="glyphicon glyphicon-plus"></i>
                     <span>Select files...</span>
                     <input id="userFileInput" type="file" name="photos" multiple="multiple" multiple>
@@ -341,6 +347,19 @@
         });
 
     });
+
+    $(document).ready(function(){
+        $('#clientName').change(function(){
+        var selected = $(this).val();
+        if(selected == ''){
+            $('#selectbutton').prop("disabled", true);
+        }
+        else{
+            $('#selectbutton').prop("disabled", false);
+        }
+});
+    });
+
 </script>
 
 </body>
