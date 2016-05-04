@@ -99,7 +99,7 @@
 
                                 <div class="form-group">
                                     <label for="pwd2" class="control-label">CONFIRM PASSWORD</label>
-                                    <input type="password" id="pwd2" class="form-control" name="password2" data-match="#pwd1" data-match-error="Whoops, these don't match" placeholder="Confirm" required>
+                                    <input type="password" id="pwd2" class="form-control" name="password2" data-match="#pwd1" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$" data-match-error="Whoops, these don't match" placeholder="Confirm" required>
                                     <div class="help-block with-errors"></div>
                                 </div>
 
@@ -160,21 +160,6 @@
 </div>
 </div>
 </div>-->
-	<script>
-	var password = $("#pwd1").val();
-  , confirm_password = $("#pwd2").val();
-
-function validatePassword(){
-  if(password != confirm_password) {
-    confirm_password.setCustomValidity("Passwords Don't Match");
-  } else {
-    confirm_password.setCustomValidity('');
-  }
-}
-
-password.onchange = validatePassword;
-confirm_password.onkeyup = validatePassword;
-	</script>
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
@@ -186,6 +171,26 @@ confirm_password.onkeyup = validatePassword;
 
     <!-- Bootstrap JS -->
     <script src="/bootstrap/js/bootstrap.min.js"></script>
+	<script>
+$(document).ready(function() {	
+function validatePassword(){
+	var password = $("#pwd1").val(), confirm_password = $("#pwd2").val();
+  if(password != confirm_password) {	
+	$('.with-errors').text("Passwords dont match!");
+	event.preventDefault();	
+  } else {
+    $("#pwd2").get(0).setCustomValidity('');
+  }
+}
+
+$('#SignUpForm').submit(function(){
+	validatePassword();
+});
+});
+//password.onchange = validatePassword;
+//confirm_password.onkeyup = validatePassword;
+	</script>
+
     
 </body>
 </html>
