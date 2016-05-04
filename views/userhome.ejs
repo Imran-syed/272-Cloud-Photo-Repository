@@ -39,8 +39,10 @@
     <link rel="stylesheet" href="/css/style.css">
     <style>
     .form-box{
-        border: 2px solid grey;
-        padding:5px;
+            border: 1px solid grey;
+			padding: 5px;
+			margin-bottom: 10px;
+			border-radius: 5px;
     }
     </style>    
 </head>
@@ -86,7 +88,7 @@
                 <form action="/api/register" method="post">
                     <div class="form-group">
                         <label for="deviceName">Please Register your device</label>
-                        <input type="text" class="form-control" name="deviceName" placeholder="Your device name here">
+                        <input type="text" class="form-control" name="deviceName" placeholder="Your device name here" pattern="[a-zA-Z0-9]+" required>
                             
                     </div>
                     <button type="submit" class="btn btn-warning btn-lg">Register</button>
@@ -106,7 +108,7 @@
                 Your browser may not support the functionality on this page.
             </div>
 
-            <div class = "col-xs-7">
+            <div class = "col-sm-7">
                 <label for="deviceName">Choose your device</label>
                 <form action="/api/setdevice" method="post" >
                 <select class="form-control" id="clientName" name="deviceSelect" onchange="this.form.submit()" required >
