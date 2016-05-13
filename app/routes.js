@@ -26,11 +26,6 @@ module.exports = function(app, passport) {
         req.logout();
         res.redirect('/');
     });
-	
-	//USER ================================= Commenting because now the user will be redirected to the home page
-	/*app.get('/user', function (req, res) {
-        res.render('user.ejs');
-    });*/
 
     //USER HOME =============================
     app.get('/userhome', isLoggedIn, function (req, res) {

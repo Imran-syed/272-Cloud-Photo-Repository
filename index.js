@@ -22,34 +22,6 @@ mongoose.connect(mongodbURI);
 //mongoose.connect(config.database);
 require('./config/passport')(passport);
 
-// upload photo
-   /* var storage =   multer.diskStorage({
-       destination: function (req, file, callback) {
-       callback(null, './uploads');
-     },
-   filename: function (req, file, callback) {
-       callback(null, file.fieldname + '-' + Date.now());
-     }
-});
-
-    var upload = multer({ storage : storage}).array('userPhoto',100);
-
-    app.get('/',function(req,res){
-          res.sendFile(__dirname + "/public/index.html");
-       });
-
-     app.post('/api/photo',function(req,res){
-           upload(req,res,function(err) {
-                 if(err) {
-                       return res.end("Error uploading file.");
-                   }
-                res.end("File is uploaded");
-
-                    console.log(req.files);
-             });
-});*/
-
-
 app.use(morgan('dev')); // log every request to the console
 app.use(cookieParser()); // read cookies (needed for auth)
 app.use(bodyParser.json()); // get information from html forms
