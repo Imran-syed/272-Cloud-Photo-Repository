@@ -19,7 +19,7 @@ app.set('port', (process.env.PORT || 5000));
 app.use(express.static(__dirname + '/public'));
 
 //mongoose.connect(mongodbURI);
-mongoose.connect(config.database);
+mongoose.connect(config.database,config.options);
 require('./config/passport')(passport);
 
 app.use(morgan('dev')); // log every request to the console

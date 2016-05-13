@@ -1,4 +1,11 @@
 module.exports = {
   'secret': 'cmpe272cloudphotorepository',
-  'database': 'mongodb://52.200.26.204:27017/cmpe272'
+  'database': 'mongodb://52.200.26.204:27017/cmpe272',
+  'options': {
+           "server": {
+               "socketOptions": {
+                   "keepAlive": 1
+               }
+           }
+        }
 };
