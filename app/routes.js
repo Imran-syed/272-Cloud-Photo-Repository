@@ -180,14 +180,11 @@ module.exports = function(app, passport) {
 // Handle uploading of new images
     app.post('/api/upload',isLoggedIn ,function (req, res) {
         console.log("REQUEST param: "+ JSON.stringify(req.params));
-        console.log("1");
         console.log("The device is : "+deviceName);
         if (Object.keys(req.files).length === 0) {
-            console.log("2");
             res.statusCode = 500;
             return res.send({error: 'Server error'});
         } else {
-           // console.log('File Details ' + JSON.stringify(req.files));
 
             // Step 2. Iterate files and update task when optimisation is completed
             var fileList = [].concat(req.files.userFile);
@@ -202,7 +199,6 @@ module.exports = function(app, passport) {
             async.each(fileList, function (fileItem, done) {
 
                 // Create imagemin and optimize uploaded files
-                console.log("4");
                 var imagemin = new Imagemin()
                     .src(fileItem.path)
                     .use(Imagemin.jpegtran({progressive: true}))
@@ -215,7 +211,6 @@ module.exports = function(app, passport) {
                     }
 
                     files.forEach(function (tmpFile) {
-                        console.log(tmpFile.contents.length);
                         minifiedBaseImages.push(new Buffer(tmpFile.contents).toString('base64'));
                         console.log('Optmization on file is complete and appended to list');
                     });
@@ -239,7 +234,6 @@ module.exports = function(app, passport) {
                         //console.log(doc);
                         if(doc==null)
                         {
-                            console.log(req.user.local.email);
                             task = new device({
                                 email: req.user.local.email,
                                 name:deviceName,
@@ -287,10 +281,7 @@ module.exports = function(app, passport) {
 
             });
 
-            res.statusCode = 200;
-            res.json({
-                success: true
-            });
+            res.status(200).json({success: true, msg: 'Successfully uploaded the image'});
         }
     });
 
