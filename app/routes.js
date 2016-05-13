@@ -142,7 +142,7 @@ module.exports = function(app, passport) {
     //==================================================================
 
     app.use(function (req, res, next) {
-        var imgs = ['png','jpg','JPG'];  //Imran: have to move somewhere ! but not here
+        var imgs = ['png','jpg','JPG','JPEG','PNG'];  //Imran: have to move somewhere ! but not here
         var handler = multer({
             inMemory: false, // TODO set this to true, currently writes output to disk
             dest: './static/tmp/',
