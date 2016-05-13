@@ -10,16 +10,16 @@ var session      = require('express-session');
 multer = require('multer');
 
 deviceName = 'Choose Device';
-var mongodbURI  = 'mongodb://52.200.26.204:27017/cmpe272';
-console.log(mongodbURI);
+//var mongodbURI  = 'mongodb://52.200.26.204:27017/cmpe272';
+//console.log(mongodbURI);
 var config      = require(__dirname +'/config/mongoConnect');
 app.use(express.static(__dirname + '/static'));
 
 app.set('port', (process.env.PORT || 5000));
 app.use(express.static(__dirname + '/public'));
 
-mongoose.connect(mongodbURI);
-//mongoose.connect(config.database);
+//mongoose.connect(mongodbURI);
+mongoose.connect(config.database);
 require('./config/passport')(passport);
 
 app.use(morgan('dev')); // log every request to the console
@@ -29,7 +29,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 
-app.use(session({ secret: 'cmpe272cloudphotorepository' })); // session secret
+app.use(session({ secret: config.secret })); // session secret
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 app.use(flash()); // use connect-flash for flash messages stored in session

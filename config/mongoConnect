@@ -1,3 +1,4 @@
 module.exports = {
-  'database': 'mongodb://localhost:27017/cmpe272'
+  'secret': 'cmpe272cloudphotorepository',
+  'database': 'mongodb://52.200.26.204:27017/cmpe272'
 };
